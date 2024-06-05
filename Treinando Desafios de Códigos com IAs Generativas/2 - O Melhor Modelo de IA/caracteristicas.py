@@ -1,12 +1,12 @@
-.class ModeloIA:
-    def _init_(self, nome, desempenho, velocidade, custo, capacidades):
+class ModeloIA:
+    def __init__(self, nome, desempenho, velocidade, custo, capacidades):
         self.nome = nome
         self.desempenho = desempenho
         self.velocidade = velocidade
         self.custo = custo
         self.capacidades = capacidades
     
-    def _str_(self):
+    def __str__(self):
         return self.nome
 
 # Função para recomendar o modelo de IA com base nas características fornecidas
@@ -22,6 +22,7 @@ def recomendar_modelo(caracteristicas):
     capacidades_usuario = [capacidade.lower() for capacidade in caracteristicas['Capacidades']]
 
     for modelo in modelos:
+       # Convertemos as capacidades do modelo para minúsculas:
         capacidades_modelo = [capacidade.lower() for capacidade in modelo.capacidades]
         
         if all(capacidade in capacidades_usuario for capacidade in capacidades_modelo):
@@ -30,7 +31,7 @@ def recomendar_modelo(caracteristicas):
 
     return modelo_recomendado if modelo_recomendado else "Nenhum modelo encontrado."
 
-# Função para gerar uma explicação para o modelo recomendado
+# Aqui temos a função que gera uma explicação para o modelo recomendado:
 def gerar_explicacao(modelo, caracteristicas):
     if isinstance(modelo, ModeloIA):
         explicacao = f"O {modelo.nome} é o modelo recomendado."
@@ -38,7 +39,7 @@ def gerar_explicacao(modelo, caracteristicas):
     else:
         return modelo
 
-# Função para obter as características desejadas do usuário
+# Aqui fica a função que solicita características desejadas ao usuário:
 def obter_caracteristicas():
     caracteristicas = {}
     caracteristicas['Desempenho'] = int(input())
