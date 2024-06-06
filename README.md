@@ -15,3 +15,5 @@ Este é um curso que proporciona uma compreensão aprofundada sobre os princípi
 
 📥 **Data inicial:** 22/05/2024
 📤 **Data final:** 05/06/2024
+
+[🔗 **Link para o curso**](https://web.dio.me/track/bootcamp-nexa-fundamentos-de-ia-generativa-e-claude-3)
